@@ -25,7 +25,7 @@ if( !is.na(folder) ){ # only process if a folder is chosen
     )
 
     #copy plot to png file
-    dev.copy(png, file="plot2.png")
+    dev.copy(png, file="plot2.png") # default is 480 x480
     dev.off()
     
 }

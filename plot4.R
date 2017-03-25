@@ -36,6 +36,6 @@ if( !is.na(folder) ){ # only process if a folder is chosen
     #plot 4
     with(subData,plot(x=Date_time, y=Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime"))
     #copy plot to png file
-    dev.copy(png, file="plot4.png")
+    dev.copy(png, file="plot4.png") # default is 480 x480
     dev.off()
 }

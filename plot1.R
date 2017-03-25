@@ -28,6 +28,6 @@ if( !is.na(folder) ){ #
          )
 
     #copy plot to png file
-    dev.copy(png, file="plot1.png")
+    dev.copy(png, file="plot1.png") # default is 480 x480
     dev.off()
 }
