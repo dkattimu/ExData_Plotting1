@@ -23,8 +23,9 @@ if( !is.na(folder) ){ #
                 )
     
     # plot histogram
+    
     with(subData,
-         hist(Global_active_power,main="Global Active Power",col="red", xlab="Global Active Power (kilowatts)", ylab="Frequency")
+         hist(Global_active_power,main="Global Active Power ",col="red", xlab="Global Active Power (kilowatts)", ylab="Frequency")
          )
 
     #copy plot to png file

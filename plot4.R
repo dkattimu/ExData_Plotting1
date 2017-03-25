@@ -6,8 +6,8 @@ if( !is.na(folder) ){ # only process if a folder is chosen
     setwd(folder) # set working directory
     #name of data file
     fileName ="household_power_consumption.txt"
-    cCls<-rep("character",9) # data type for columns
-    system.time(data<-fread(fileName,sep =";",colClasses = cCls )) # read file
+    colCls<-rep("character",9) # data type for columns
+    system.time(data<-fread(fileName,sep =";",colClasses = colCls )) # read file
     system.time(data <-data %>% mutate(Date=as.Date(Date,format="%d/%m/%Y"))) # read data
     
     fromDate=as.Date("1/2/2007",format="%d/%m/%Y") # from date
@@ -24,7 +24,7 @@ if( !is.na(folder) ){ # only process if a folder is chosen
     )
     #set graph structure
     par(mfrow=c(2,2))
-    #plot 1
+    #plot 
     with(subData,plot(x=Date_time, y=Global_active_power, type="l", ylab="Global Active Power", xlab=""))
     #plot 2
     with(subData,plot(x=Date_time, y=Voltage, type="l", ylab="Voltage", xlab="datetime"))
@@ -32,7 +32,7 @@ if( !is.na(folder) ){ # only process if a folder is chosen
     with(subData, plot(x=Date_time,y=Sub_metering_1, type="l", col="black",ylab="Energy sub metering", xlab=""))
     with(subData, lines(x=Date_time,y=Sub_metering_2, col="red"))
     with(subData, lines(x=Date_time,y=Sub_metering_3, col="blue"))
-    legend("topright",lty=c(1,1,1),col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+    legend("topright",lty=c(1,1,1),col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), bty="n") #bty to remove legend outline
     #plot 4
     with(subData,plot(x=Date_time, y=Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime"))
     #copy plot to png file

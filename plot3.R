@@ -22,7 +22,7 @@ if( !is.na(folder) ){ #
                      mutate(Date_time=as.POSIXct(DateTime))# Just get the date plus time and active power variables
     )
     #plot sub-metering_1
-    with(subData, plot(x=Date_time,y=Sub_metering_1, type="l", col="black",ylab="Energy sub metering",xlab = ""))
+    with(subData, plot(x=Date_time,y=Sub_metering_1, type="l", col="black",ylab="Energy sub metering ",xlab = ""))
     with(subData, lines(x=Date_time,y=Sub_metering_2, col="red"))
     with(subData, lines(x=Date_time,y=Sub_metering_3, col="blue"))
     legend("topright",lty=c(1,1,1),col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))

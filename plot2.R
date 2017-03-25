@@ -21,7 +21,7 @@ if( !is.na(folder) ){ # only process if a folder is chosen
                 )
     # plot graph
     with(subData,
-         plot(x=Date_time, y=Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+         plot(x=Date_time, y=Global_active_power, type="l", ylab="Global Active Power (kilowatts) ", xlab="")
     )
 
     #copy plot to png file
